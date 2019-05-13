@@ -18,4 +18,16 @@ public enum SymbolType {
                 return INVALID;
         }
     }
+
+    public boolean isArithmetic() {
+        return this == INTEGER || this == FLOAT;
+    }
+
+    public boolean isMaybeArithmetic() {
+        return this == INTEGER || this == FLOAT || this == INVALID;
+    }
+
+    public boolean maybeEquals(SymbolType t) {
+        return this == t || this == INVALID;
+    }
 }
