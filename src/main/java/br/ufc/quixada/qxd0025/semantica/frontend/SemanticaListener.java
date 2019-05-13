@@ -1,4 +1,4 @@
-// Generated from /home/araruna/workspace/java/comp-codigos/AnaliseSemantica/src/main/java/br/ufc/quixada/qxd0025/semantica/antlr4/Semantica.g4 by ANTLR 4.7.2
+// Generated from /home/araruna/workspace/java/comp-material/comp-semantica/src/main/java/br/ufc/quixada/qxd0025/semantica/antlr4/Semantica.g4 by ANTLR 4.7.2
 package br.ufc.quixada.qxd0025.semantica.frontend;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
