@@ -18,14 +18,14 @@ public class SemanticaChecker extends SemanticaBaseListener {
 
     @Override
     public void enterStatement(SemanticaParser.StatementContext ctx) {
-        if (ctx.statement() != null) {
+        if (ctx.statement().size() > 0) {
             symbols.enterBlock();
         }
     }
 
     @Override
     public void exitStatement(SemanticaParser.StatementContext ctx) {
-        if (ctx.statement() != null) {
+        if (ctx.statement().size() > 0) {
             symbols.leaveBlock();
         }
     }
@@ -34,7 +34,7 @@ public class SemanticaChecker extends SemanticaBaseListener {
     public void enterVardecl(SemanticaParser.VardeclContext ctx) {
         Symbol symbol = Symbol.getSymbolFor(ctx.ID().getText());
         // FIXME Obter a enumeração correta
-        SymbolType type = SymbolType.INVALID;
+        SymbolType type = SymbolType.fromString(ctx.type().getText());
         if (!symbols.tryDeclare(symbol, type)) {
             // TODO Erro semântico => Declarando novamente
         }
